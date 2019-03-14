@@ -1,0 +1,149 @@
+@import url("fonts.css");
+@import url("animate.min.css");
+body {
+	margin: 0;
+	padding: 0;
+	font-family:'Conv_futura medium bt',Sans-Serif;
+	width: 100%;
+	height: 100%;
+	overflow: hidden !important;
+	background: #000;
+	color: #fff;
+	position: fixed;
+}
+
+
+#intro{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../img/../img/formulario.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 1;
+}
+#canvas{
+  display: none;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+	margin: -275px 0 0 -372px;
+	opacity: 0;
+}
+
+#imagen{
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+	width: 744px;
+	height: 550px;
+	margin: -275px 0 0 -372px;
+	display: none;
+}
+
+.modal {
+  position: fixed;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  visibility: hidden;
+  opacity:0;
+  -webkit-transition:opacity 0.4s linear;
+  -moz-transition:opacity 0.4s linear;
+  -ms-transition:opacity 0.4s linear;
+  -o-transition:opacity 0.4s linear;
+  transition:opacity 0.4s linear;
+}
+.modal.show {
+  visibility: visible;
+  opacity:1;
+}
+
+.valign-table {
+  display: table;
+  table-layout: fixed;
+	text-align: center;
+}
+.valign-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#memory--settings-reset {
+  background-color: rgba(255,255,255,0.9);
+  color: #001a3b;
+  font-size: 3em;
+  border: 2px solid #001a3b;
+  border-radius: 15px;
+	padding: 5px 30px;
+	z-index: 10;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+#memory--end-game-modal {
+    background-color: rgba(0, 0, 0, .50);
+}
+
+#memory--end-game-modal .wrapper {
+
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #001a3b;
+  width: 350px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 175px / 100px;
+  position: relative;
+
+}
+#memory--end-game-modal h2,
+#memory--end-game-modal h3 {
+  	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+	font-weight: bold;
+    transform: translate(-50%, -50%);
+}
+
+#memory--end-game-modal a {
+	text-decoration: none;
+	display: block;
+  	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+	color: #001a3b;
+	font-weight: bold;
+    transform: translate(-50%, -50%);
+}
+
+
+#cronometro{
+	font-size: 3em;
+	color: #fff;
+	left: 20px;
+	top: 2px;
+	position: absolute;
+	z-index: 10;
+	display: none;
+}

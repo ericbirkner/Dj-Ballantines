@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' data: gap: 'unsafe-eval'; style-src * 'self' 'unsafe-inline'; connect-src * ; script-src * 'self' 'unsafe-inline'; media-src *">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Ballantines</title>
+</head>
+
+<body id="fixed">
+	
+	<div id="etiqueta" class="slideInDown animated"></div>
+		<!--
+		<a href="time.html" class="time"><img src="img/time.png" width="50" height="50" alt="" /></a>
+		-->
+		<div id="intro" >
+			<div id="inicio" >
+				<a class="inicio zoomIn animated" >INICIO</a>
+				
+			</div>
+			
+			
+			<div id="formulario">
+				<div class="campos fadeInRight animated">
+					<form id="form_registro">
+					<p>
+						<label for="nombre">NOMBRE</label><input type="text" name="nombre" class="input large" id="firstName" maxlength="100" required>
+					</p>
+					<p>
+						<label for="apellidos">APELLIDOS</label><input type="text" name="apellidos" class="input large" id="lastName" maxlength="100" required>
+					</p>
+					<p>
+						<label for="rut">RUT</label>
+						<input type="text" name="rut" class="input" id="rut" maxlength="13" required>
+					</p>
+					<p>
+						<label for="email">MAIL</label>	
+						<input type="email" name="email" class="input" id="email" required>
+					</p>
+					<div class="desc_fecha"></div>
+					<p>
+						<label class="block">Fecha de Nacimiento</label>	
+						<select name="dia" id="dia" class="fecha uno" required>
+							<option value="">día</option>
+							<script>
+								for(i=1;i<=31;i++){
+									document.write('<option value="'+i+'">'+i+'</option>');
+								}
+							</script>
+						</select>
+
+						<select name="mes" id="mes" class="fecha" required>
+							<option value="">mes</option>
+							<script>
+								for(i=1;i<=12;i++){
+									document.write('<option value="'+i+'">'+i+'</option>');
+								}
+							</script>
+						</select>
+
+						<select name="ano" id="ano" class="fecha" required>
+							<option value="">año</option>
+							<script>
+								var ano = new Date().getFullYear();
+								ano = parseInt(ano);
+								for(i=ano;i>=1940;i--){
+									document.write('<option value="'+i+'">'+i+'</option>');
+								}
+							</script>
+						</select>
+					</p>
+					<p class="info">
+						<label class="container">ACEPTAR RECIBIR INFORMACIÓN promocional de Ballantine's &nbsp; &nbsp;
+							  <input type="checkbox" checked="checked" name="recibe_info" value="si" id="recibe_info" required>
+							  <span class="checkmark"></span>
+						</label>
+					</p>
+					<p class="info">
+						<label class="container">ACEPTO LA POLÍTICA DE PRIVACIDAD &nbsp; &nbsp;
+							  <input type="checkbox" checked="checked" name="acepta_politica" value="si" id="acepta_politica" required>
+							  <span class="checkmark"></span>
+						</label>
+					</p>
+
+
+
+
+					<input class="enviar" type="submit" value="ENVIAR">
+					</form>
+				</div>
+
+
+	
+
+
+    </div>
+			
+			
+			
+			
+		</div>
+	
+    
+	
+    
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/index.js"></script>
+	
+	
+    
+	
+  </body>
+
+</html>

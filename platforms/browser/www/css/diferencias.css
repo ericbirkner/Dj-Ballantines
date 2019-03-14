@@ -1,0 +1,136 @@
+/* CSS Document */
+#diferencias .wrapper{
+	margin: 15% auto;
+	height: 400px;
+	width: 920px;
+	display: none;
+}
+
+#diferencias .wrapper .img{
+	width: 450px;
+	height: 400px;
+	float: left;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center top;
+	position: relative;
+}
+
+#diferencias .wrapper .img2{
+	float: right;
+}
+
+#diferencias .wrapper .img2 .dot{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: greenyellow;
+	border-radius: 10px;
+	border: 1px solid white;
+	z-index: 4;
+	opacity: 0;
+	transform: scale(1.1,1.1);
+}
+
+.modal {
+  position: fixed;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  visibility: hidden;
+  opacity:0;
+  -webkit-transition:opacity 0.4s linear;
+  -moz-transition:opacity 0.4s linear;
+  -ms-transition:opacity 0.4s linear;
+  -o-transition:opacity 0.4s linear;
+  transition:opacity 0.4s linear;
+}
+.modal.show {
+  visibility: visible;
+  opacity:1;
+}
+
+.valign-table {
+  display: table;
+  table-layout: fixed;
+	text-align: center;
+}
+.valign-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#memory--settings-reset {
+  background-color: rgba(255,255,255,0.9);
+  color: #001a3b;
+  font-size: 3em;
+  border: 2px solid #001a3b;
+  border-radius: 15px;
+	padding: 5px 30px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+#memory--end-game-modal {
+    background-color: rgba(0, 0, 0, .50);
+}
+
+#memory--end-game-modal .wrapper {
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #001a3b;	
+  width: 350px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 175px / 100px;
+  position: relative;	
+	
+}
+#memory--end-game-modal h2,
+#memory--end-game-modal h3 {
+  	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+	font-weight: bold;
+    transform: translate(-50%, -50%); 
+}
+
+#memory--end-game-modal a {
+	text-decoration: none;
+	display: block;
+  	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+	color: #001a3b;
+	font-weight: bold;
+    transform: translate(-50%, -50%); 
+}
+
+
+#cronometro{
+	font-size: 3em;
+	color: #fff;
+	left: 20px;
+	top: 2px;
+	position: absolute;
+	z-index: 10;
+	display: none;
+}
+

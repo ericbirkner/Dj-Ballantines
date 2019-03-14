@@ -1,0 +1,359 @@
+.fondo-memorice{
+   position: absolute;
+   width: 100%; height: 100%;
+   left: 0; top: 0;
+   background: url(../img/fondo_form.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.modal {
+  position: fixed;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  visibility: hidden;
+  opacity:0;
+  -webkit-transition:opacity 0.4s linear;
+  -moz-transition:opacity 0.4s linear;
+  -ms-transition:opacity 0.4s linear;
+  -o-transition:opacity 0.4s linear;
+  transition:opacity 0.4s linear;
+}
+.modal.show {
+  visibility: visible;
+  opacity:1;
+}
+
+.valign-table {
+  display: table;
+  table-layout: fixed;
+}
+.valign-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#memory--app-container {
+  width:61%;
+  height:100%;
+  right: 2%;
+  position: absolute;
+  z-index: 2;
+}
+
+.memory--menu-bar {
+  width:100%;
+  background-color: #222;
+  height:10%;
+  /*display:table*/;
+  display: none;
+
+}
+
+.memory--menu-bar .inner {
+  display:table-cell;
+  vertical-align:middle;
+}
+.memory--menu-bar .left {
+  text-align: left;
+  float:left;
+  width:50%;
+}
+.memory--menu-bar .right {
+  text-align: right;
+  float:right;
+  width:50%;
+}
+.memory--app-name {
+  color:#ccc;
+  font-size:26px;
+  margin:0;
+  padding:1px 4px;
+  text-transform: uppercase;
+  font-family: "Courier New";
+  letter-spacing: 2px;
+}
+@media screen and (max-width: 480px) {
+  .memory--app-name {
+    font-size:16px;
+  }
+}
+
+#memory--settings-icon {
+  height: 24px;
+  display: block;
+  padding:4px 8px;
+  float: right;
+}
+
+#memory--end-game-modal .wrapper {
+
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #001a3b;
+  width: 350px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 175px / 100px;
+  position: relative;
+
+}
+#memory--end-game-modal h2,
+#memory--end-game-modal h3 {
+  	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+	font-weight: bold;
+    transform: translate(-50%, -50%);
+
+}
+
+#memory--end-game-modal a {
+	text-decoration: none;
+	display: block;
+  	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+	color: #001a3b;
+	font-weight: bold;
+    transform: translate(-50%, -50%);
+}
+
+#memory--settings-modal {
+
+
+
+}
+
+#memory--end-game-modal{
+	background-color: rgba(0, 0, 0, .50);
+}
+
+#memory--end-game-modal .wrapper{
+
+}
+
+#memory--settings-modal form {
+  min-width:240px;
+  width:50%;
+  margin:0 auto;
+  text-align: center;
+  color:#ccc;
+}
+
+.memory--settings-label {
+  margin:8px 0;
+}
+
+#memory--settings-grid,
+#memory--settings-reset {
+
+}
+
+#memory--settings-grid option {
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+#memory--settings-reset {
+  /*
+  background-color: rgba(255,255,255,0.9);
+  color: #001a3b;
+  font-size: 3em;
+  border: 2px solid #001a3b;
+  border-radius: 15px;
+  padding: 5px 30px;
+  */
+  background: url('../img/Boton-comenzar.png') no-repeat;
+  background-size: 100% auto;
+  border: none;
+  text-indent: -10000000px;
+  width: 250px;
+  height: 88px;
+}
+
+#memory--cards {
+  margin:0 auto;
+  padding:0;
+  height:100%;
+  list-style-type: none;
+  list-style-image: none;
+  position:relative;
+}
+/* entire container, keeps perspective */
+.flip-container {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  float:left;
+}
+
+/* flip the pane when clicked */
+.flip-container.clicked .front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.flip-container.clicked .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+/* flip speed goes here */
+.flipper {
+  width:100%;
+  height:100%;
+  margin:0% auto;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+  top:5%;
+  bottom:5%;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  width:100%;
+  height:100%;
+  display: block;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  /* for firefox 31 */
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  /*background-color: #e12d00;*/
+  border-radius: 5%;
+  /*background-image: url(../img/card.svg);*/
+  background-image: url(../img/back_men.jpg);
+  background-position:50% 50%;
+  background-repeat: no-repeat;
+  background-size: auto 96%;
+
+}
+
+/* back, initially hidden pane */
+.back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  /*background-color: #fff;*/
+  border-radius: 5%;
+  background-position:50% 50%;
+  background-repeat: no-repeat;
+  background-size: auto 96%;
+}
+
+.back.card-1 {
+  background-image: url(../img/memo/1.png);
+}
+.back.card-2 {
+  background-image: url(../img/memo/2.png);
+}
+.back.card-3 {
+  background-image: url(../img/memo/3.png);
+}
+.back.card-4 {
+  background-image: url(../img/memo/4.png);
+}
+.back.card-5 {
+  background-image: url(../img/memo/5.png);
+}
+.back.card-6 {
+  background-image: url(../img/memo/6.png);
+}
+.back.card-7 {
+  background-image: url(../img/memo/7.png);
+}
+.back.card-8 {
+  background-image: url(../img/memo/8.png);
+}
+.back.card-9 {
+  background-image: url(../img/memo/1.png);
+}
+.back.card-10 {
+  background-image: url(../img/memo/2.png);
+}
+.back.card-11 {
+  background-image: url(../img/memo/3.png);
+}
+.back.card-12 {
+  background-image: url(../img/memo/4.png);
+}
+.back.card-13 {
+  background-image: url(../img/memo/5.png);
+}
+.back.card-14 {
+  background-image: url(../img/memo/6.png);
+}
+.back.card-15 {
+  background-image: url(../img/memo/7.png);
+}
+
+
+#cronometro{
+	font-size: 3em;
+	color: #fff;
+	left: 20px;
+	top: 2px;
+	position: absolute;
+	z-index: 10;
+	display: none;
+}
+
+/** Matching Cards **/
+/**
+ * If you wish to have custom matching images, you can do so
+ * by leveraging the 'matching' class which is added to one
+ * of the matching cards. See the example below.
+ *
+ * .back.card-1 {
+ *   background-image: url(../images/fruits/apple_1.jpg);
+ * }
+ *
+ * .back.matching.card-1 {
+ *   background-image: url(../images/fruits/apple_2.jpg);
+ * }
+ *
+ */

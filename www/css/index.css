@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+
+@import url("animate.min.css");
+
+:focus {
+outline: 0;
+}
+
+input:focus, textarea:focus {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-modify: read-write-plaintext-only;
+}
+
+input[type="date"]:before{
+    color:#fff;
+    content:attr(placeholder);
+}
+
+input[type="date"].full:before {
+    color:black;
+    content:""!important;
+}
+
+input::-webkit-datetime-edit{ color: transparent; }
+
+
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	color: #fff;
+	overflow: hidden;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+strong, h1, h2, h3, h4, h5{
+	/*
+	font-family: 'Conv_Futura Bold font',Sans-Serif;
+	letter-spacing: 2px;
+	*/
+	font-weight: bold;
+}
+
+a.volver{
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    display: inline-block;
+    color: white;
+    padding: 5px 10px 5px;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #001a3b;
+    border-style: none;
+    text-align: center;
+    overflow: visible;
+	font-size: 1em;
+	position: absolute;
+	left: 3%;
+	top: 3%;
+	z-index: 10;
+}
+
+a.setup{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 20px;
+	bottom: 5%;
+	z-index: 10;
+}
+
+a.sincronizar{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 80px;
+	bottom: 5%;
+	z-index: 10;
+}
+
+a.time{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 80px;
+	bottom: 5%;
+	z-index: 10;
+}
+
+#etiqueta{
+	background: url('../img/ETIQUETA.png') center top no-repeat;
+	background-size: 100% auto;
+	width: 100px;
+	height: 110px;
+	position: absolute;
+	right: 15px;
+	top: 0;
+	z-index: 2;
+	animation-delay:1s;
+}
+
+#intro{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../img/fondo_premio.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 1;
+}
+
+#intro.premio .foto_premio{
+	position: absolute;
+  right: 30px;
+  top: 140px;
+  width: 450px;
+	height: auto;
+	animation-delay:1s;
+}
+
+#intro a.inicio{
+	width: 200px;
+	height: 50px;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	right: 100px;
+	display: block;
+	color: #ffffff;
+	background: rgba(0,25,58,0.8);
+	text-align: center;
+	border-radius: 10px;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 50px;
+	animation-delay:1s;
+}
+
+#formulario{
+	display: none;
+}
+
+#formulario .logo{
+	width: 35%;
+	height: auto;
+	position: absolute;
+	z-index: 2;
+	top: 30%;
+	right: 6%;
+	animation-delay:1s;
+}
+
+#formulario, #diferencias{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+#formulario .campos{
+	width: 500px;
+	height: 90%;
+	right: 5%;
+	top: 150px;
+	position: absolute;
+}
+
+#formulario .campos h1{
+    font-size: 1.4em;
+}
+
+#formulario .campos label{
+	display: block;
+	float: left;
+	color: #ffffff;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 53px;
+	margin-right: 10px;
+	text-transform: uppercase;
+}
+
+#formulario .campos label.block{
+	clear: both;
+	width: 100%;
+}
+
+#formulario .campos .input{
+	color: #ffffff;
+	background: rgba(255,255,255,0.5);
+	display: block;	
+	padding: 8px 8px;
+	border: none;
+	border-radius: 17px;
+	font-size: 30px;
+	width: 190px;
+	text-transform: uppercase;
+	font-weight: 700;
+	
+}
+
+#formulario .campos .input.large{
+	width: 348px;
+}
+
+#formulario .campos select.fecha{
+	color: #ffffff;
+	background: rgba(255,255,255,0.5);
+	font-size: 26px;
+	display:inline-block;
+	width: 80px;
+	padding: 5px 8px;
+	border: none;
+	margin-top: 10px;
+	border-radius: 10px;
+	text-transform: uppercase;
+	-webkit-appearance:none;
+}
+
+#formulario .campos select.fecha.uno{
+	margin-left: 20px;
+}
+
+
+#formulario .campos .desc_fecha{
+	text-align: left;
+	font-size: 1em;
+}
+
+#formulario .info{
+	text-align: right;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+#formulario .campos .enviar{
+	color: #fff;
+	background: rgba(0,25,58,0.8);
+	text-align: center;
+	font-size: 30px;
+	border: none;
+	text-transform: uppercase;
+	border-radius: 10px;
+	padding: 10px 5%;
+	position: absolute;
+	right: 0;
+	top: 300px;
+}
+
+.legal{
+	position: absolute;
+	width: 90%;
+	bottom: 5px;
+	left: 5%;
+	z-index: 2;
+	font-size: 12px;
+	text-align: justify;
+}
+
+.legal.center{
+	text-align: center;
+	padding-bottom: 15px;
+	font-size: 15px;
+}
+
+.legal a{
+  color: white;
+}
+
+/* Create a custom checkbox */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 50px;
+    margin-top: 17px;
+    font-size: 15px !important;
+	line-height: 20px! important;
+	font-weight: 300 !important;
+    cursor: pointer;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+	border: 2px solid #ffffff;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: transparent;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+body.setup{
+  overflow: auto;
+  background: url(../img/fondo_form.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 800px;
+}
+
+body.setup .box,body.setup h1{
+	margin: 3% 0 0 5%;
+	text-align: center;
+}
+
+body.setup input[type='text'] {
+   border: none;
+   width: 200px;
+   padding: 10px;
+   border-radius: 5px;
+   color: #001a3b;
+   font-size: 1em;
+}
+body.setup #t01 {
+    width:90%;
+	margin: 0 auto;
+	background: rgba(255,255,255,0.8);
+	color: #000;
+}
+body.setup #t01, th, td {
+    border-collapse: collapse;
+}
+body.setup th, td {
+    padding: 5px;
+    text-align: left;
+}
+body.setup table#t01 tr:nth-child(even) {
+   /* background-color: #eee;*/
+}
+body.setup table#t01 tr:nth-child(odd) {
+   /* background-color:#fff;*/
+}
+body.setup table#t01 th    {
+    background-color: #001a3b;
+    color: white;
+}
+body.setup button {
+    margin: 10px;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    display: inline-block;
+    color: white;
+    padding: 5px 10px 5px;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #001a3b;
+    border-style: none;
+    text-align: center;
+    overflow: visible;
+	font-size: 1em;
+}
+
+body.setup button:active {
+    background-position: 0 -100px;
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.7);
+    -webkit-box-shadow: none;
+}
+
+body.setup #qrpopup {
+    position:fixed;
+	z-index:9999;
+	background-color:rgba(0, 0, 0,0.9);
+	width:300px;
+	height: 300px;
+	top: 50%;
+	left: 50%;
+	display:none;
+	margin: -150px 0 0 -150px;
+}
+
+body.setup #qrpopup input[type=text]{
+	display: block;
+	margin: 10px auto;
+}
+
+.sync{
+	width: 50%;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.sync a.btn_subir{
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    display: inline-block;
+    color: white;
+    padding: 5px 10px 5px;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #001a3b;
+    border-style: none;
+    text-align: center;
+    overflow: visible;
+	font-size: 1em;
+}
+
+.sync .loading{
+	padding: 20px 0;
+	display: none;
+}
+
+
+#menu{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../img/bkg_seleccion.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 1;
+}
+
+#menu .wrapper{
+	width: 993px;
+	margin: 20% auto;
+}
+
+#menu .wrapper a.btn{
+	display: inline-block;
+	height: 282px;
+	width: 301px;
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	margin-right: 40px;
+}
+
+#menu .wrapper a.btn:last-child{
+	margin-right: 0px;
+}
+
+#menu .wrapper a.btn:hover{
+	background-position: -301px 0px;
+}
+
+
+
+#menu .wrapper a.btn.memo{
+	background-image: url('../img/juego11.png');
+}
+
+#menu .wrapper a.btn.siete{
+	background-image: url('../img/juego22.png');
+}
+
+#menu .wrapper a.btn.arma{
+	background-image: url('../img/juego33.png');
+}
+
+#intro .premio{
+	position: absolute;
+	width: 50%;
+	height: 500px;
+	right: 0;
+	top: 100px;
+	text-align: center;
+	animation-delay:1s;
+}
+
+#intro .premio a{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#intro .premio .huevo {
+  margin: 20px auto;
+  text-align: center;
+  text-transform: uppercase;
+  color: #001a3b;
+  width: 350px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 175px / 100px;
+  position: relative;
+}
+
+#intro .premio .huevo p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	font-size: 2.1em;
+	font-family: 'Conv_FuturaExtraBlack';
+    margin-right: -50%;
+
+	font-weight: bold;
+    transform: translate(-50%, -50%);
+}
