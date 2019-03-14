@@ -11,8 +11,8 @@
     };
 })(jQuery);
 
-
-
+var token = "e62b90a3-7ecf-b747-f6eb-f11079fcbacd";
+var mensaje ="";
 //validacion de formulario
 
 $(document).ready(function() {
@@ -33,11 +33,9 @@ $(document).ready(function() {
 			var firstName 	= $( "#firstName" ).val();
 			var lastName 	= $( "#lastName" ).val();
 			var recibe_info	= $( "#recibe_info" ).val();
-			var lastName 	= $( "#lastName" ).val();
 			var email 		= $( "#email" ).val();
 			//var birthday 	= $( "#birthday" ).val();
 			var birthday 	= $("#ano").val()+'-'+$("#mes").val()+'-'+$("#dia").val();	
-			var rut 		= $( "#rut" ).val();
 			var acepta_politica 		= $( "#acepta_politica" ).val();
 			
 			var obj = {
@@ -57,9 +55,9 @@ $(document).ready(function() {
 				activityName: "ballantines_DJ_2019",
 				optIn_Chivas: "True",
 				optInDate_Chivas: "2017-10-30T08:49:00Z",
-				identifyNumber 	: results.rows.item(i).rut,
+				identifyNumber 	: rut,
 				hash : "mnsdjidshjdsj"
-			}
+			};
 
 			var str = JSON.stringify(obj);
 			str = JSON.stringify(obj, null, 4);
@@ -80,7 +78,7 @@ $(document).ready(function() {
 				success: function(data){
 					//alert('Success');
 					console.log("Gracias por registrarte, ya puedes ingresar a Ballantine's Records");
-					exito++;
+					
 				},
 				failure: function(errMsg) {
 					console.log(errMsg);
