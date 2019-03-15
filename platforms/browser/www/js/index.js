@@ -116,7 +116,9 @@ $(document).ready(function() {
 			  data: { firstName: firstName, lastName: lastName, email: email, birthday: birthday,identifyNumber: rut,recibe_info:recibe_info,acepta_politica:acepta_politica}
 			})
 			.done(function( msg ) {
-				console.log( "Data Saved: " + msg );			
+				console.log( "Data Saved: " + msg );
+				$('#formulario').removeClass('fadeIn').addClass('fadeOut').css('display','none');
+				$('#lista').addClass('fadeIn animated').css('display','block');
 			});
 
 			
@@ -127,4 +129,15 @@ $(document).ready(function() {
 
 
   	});
+	
+	
+	$('#lista ul li').on('click', function(event){
+		var ok = confirm($(this).text());
+		
+		if (ok == true) {
+		  
+		} else {
+		  return false;
+		}
+	});
 });
