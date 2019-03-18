@@ -16,7 +16,37 @@ var mensaje ="";
 //validacion de formulario
 
 $(document).ready(function() {
-	
+	//cargo la lista de canciones
+	$.getJSON("http://simple2.cl/simple/save_puntos.php?lista=1", function( data ) {
+	  
+	  console.log(data);
+	  var html = "";
+	  $.each( data, function( key, val ) {		
+		 html+="<li id='" + val.id + "'>" + val.titulo + "</li>";
+	  });
+	  
+	  $('.listado ul').html(html);
+		
+	  $('#lista ul li').on('click', function(event){
+		var ok = confirm($(this).text());
+		var id = $(this).attr('id');
+		if (ok == true) {
+		  $.ajax({
+			  method: "GET",
+			  url: "http://simple2.cl/simple/save_puntos.php",
+			  data: { id: id, puntos:'true'}
+			})
+			.done(function( msg ) {
+				console.log( "Data Saved: " + msg );
+			  	$('#lista').removeClass('fadeIn').addClass('fadeOut').css('display','none');
+			    $('#final').addClass('fadeIn animated').css('display','block');			  
+			});
+		} else {
+		  return false;
+		}
+	 });	
+	  
+	});
 	
 	$('#inicio a').on('click',function(event){
 		$(this).removeClass('zoomIn').addClass('fadeOut').css('display','none');
@@ -128,16 +158,7 @@ $(document).ready(function() {
 		}
 
 
-  	});
+  	});	
 	
 	
-	$('#lista ul li').on('click', function(event){
-		var ok = confirm($(this).text());
-		
-		if (ok == true) {
-		  
-		} else {
-		  return false;
-		}
-	});
 });
