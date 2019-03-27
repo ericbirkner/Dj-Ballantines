@@ -28,7 +28,7 @@ $(document).ready(function() {
 	  $('.listado ul').html(html);
 		
 	  $('#lista ul li').on('click', function(event){
-		var ok = confirm($(this).text());
+		var ok = confirm('¿'+$(this).text().toUpperCase()+'?');
 		var id = $(this).attr('id');
 		if (ok == true) {
 		  $.ajax({

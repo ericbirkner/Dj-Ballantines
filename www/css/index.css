@@ -29,6 +29,7 @@ body{
 	padding: 0;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 	background: #000;
 	color: #fff;
 	overflow: hidden;
@@ -97,8 +98,8 @@ a.time{
 #etiqueta{
 	background: url('../img/ETIQUETA.png') center top no-repeat;
 	background-size: 100% auto;
-	width: 120px;
-	height: 131px;
+	width: 100px;
+	height: 112px;
 	position: absolute;
 	right: 15px;
 	top: 0;
@@ -170,7 +171,7 @@ a.time{
 	width: 500px;
 	height: 90%;
 	right: 5%;
-	top: 150px;
+	top: 100px;
 	position: absolute;
 }
 
@@ -184,7 +185,7 @@ a.time{
 	color: #ffffff;
 	font-weight: 700;
 	font-size: 30px;
-	line-height: 53px;
+	line-height: 46px;
 	margin-right: 10px;
 	text-transform: uppercase;
 }
@@ -198,10 +199,10 @@ a.time{
 	color: #ffffff;
 	background: rgba(255,255,255,0.5);
 	display: block;	
-	padding: 8px 8px;
+	padding: 5px;
 	border: none;
 	border-radius: 17px;
-	font-size: 30px;
+	font-size: 27px;
 	width: 190px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -220,7 +221,7 @@ a.time{
 	width: 80px;
 	padding: 5px 8px;
 	border: none;
-	margin-top: 10px;
+	margin-top: 8px;
 	border-radius: 10px;
 	text-transform: uppercase;
 	-webkit-appearance:none;
@@ -238,7 +239,7 @@ a.time{
 
 #formulario .info{
 	text-align: right;
-  margin: 0 0 10px 0;
+  margin: -10px 0 10px 0;
   padding: 0;
 }
 
@@ -281,7 +282,7 @@ a.time{
     display: block;
     position: relative;
     padding-left: 50px;
-    margin-top: 17px;
+    margin-top: 12px;
     font-size: 15px !important;
 	line-height: 20px! important;
 	font-weight: 300 !important;
@@ -350,7 +351,7 @@ a.time{
 	width: 500px;
 	height: 80%;
 	right: 5%;
-	top: 20%;
+	top: 10%;
 	position: absolute;
 	display: none;	
 }
@@ -369,24 +370,28 @@ a.time{
 	overflow-y: scroll;
 	overflow-x: hidden;
 	border: 1px solid #ffffff;
+	-webkit-overflow-scrolling: touch;
 }
 
 #lista .listado ul{
 	margin: 0;
 	padding: 0;
+	overflow: visible;
+	white-space: nowrap; 
 }
 
 #lista .listado ul li{
 	margin: 0;
 	list-style: none;
 	text-align: center;
-	font-size: 21px;
+	font-size: 20px;
 	color: #ffffff;
-	padding: 5px 0;
+	padding: 4px 0;
 	background: rgba(255,255,255,0.2);
 	border-bottom: 2px dotted #ffffff;
 	font-weight: 700;
 	text-transform: uppercase;
+	white-space: normal;
 }
 
 #lista .listado ul li:hover{
@@ -395,10 +400,10 @@ a.time{
 }
 
 #final{
-	width: 550px;
+	width: 500px;
 	height: 100%;
 	right: 5%;
-	top: 180px;
+	top: 22%;
 	position: absolute;
 	display: none;	
 }
@@ -408,95 +413,6 @@ a.time{
 	height: auto;
 }
 
-body.setup{
-  overflow: auto;
-  background: url(../img/fondo_form.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 800px;
-}
-
-body.setup .box,body.setup h1{
-	margin: 3% 0 0 5%;
-	text-align: center;
-}
-
-body.setup input[type='text'] {
-   border: none;
-   width: 200px;
-   padding: 10px;
-   border-radius: 5px;
-   color: #001a3b;
-   font-size: 1em;
-}
-body.setup #t01 {
-    width:90%;
-	margin: 0 auto;
-	background: rgba(255,255,255,0.8);
-	color: #000;
-}
-body.setup #t01, th, td {
-    border-collapse: collapse;
-}
-body.setup th, td {
-    padding: 5px;
-    text-align: left;
-}
-body.setup table#t01 tr:nth-child(even) {
-   /* background-color: #eee;*/
-}
-body.setup table#t01 tr:nth-child(odd) {
-   /* background-color:#fff;*/
-}
-body.setup table#t01 th    {
-    background-color: #001a3b;
-    color: white;
-}
-body.setup button {
-    margin: 10px;
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25);
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    display: inline-block;
-    color: white;
-    padding: 5px 10px 5px;
-    white-space: nowrap;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: #001a3b;
-    border-style: none;
-    text-align: center;
-    overflow: visible;
-	font-size: 1em;
-}
-
-body.setup button:active {
-    background-position: 0 -100px;
-    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.7);
-    -webkit-box-shadow: none;
-}
-
-body.setup #qrpopup {
-    position:fixed;
-	z-index:9999;
-	background-color:rgba(0, 0, 0,0.9);
-	width:300px;
-	height: 300px;
-	top: 50%;
-	left: 50%;
-	display:none;
-	margin: -150px 0 0 -150px;
-}
-
-body.setup #qrpopup input[type=text]{
-	display: block;
-	margin: 10px auto;
-}
 
 .sync{
 	width: 50%;
@@ -605,15 +521,3 @@ body.setup #qrpopup input[type=text]{
   position: relative;
 }
 
-#intro .premio .huevo p {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-	font-size: 2.1em;
-	font-family: 'Conv_FuturaExtraBlack';
-    margin-right: -50%;
-
-	font-weight: bold;
-    transform: translate(-50%, -50%);
-}

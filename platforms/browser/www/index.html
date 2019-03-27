@@ -8,7 +8,15 @@
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' data: gap: 'unsafe-eval'; style-src * 'self' 'unsafe-inline'; connect-src * ; script-src * 'self' 'unsafe-inline'; media-src *">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-
+	<script type="text/javascript">
+		/*
+		window.addEventListener('load', function() {
+			document.body.addEventListener('touchmove', function(e) {
+				e.preventDefault();
+			}, false);
+		}, false);
+		*/
+	</script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Ballantines</title>
 </head>
