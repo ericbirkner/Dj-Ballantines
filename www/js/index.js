@@ -137,7 +137,7 @@ $(document).ready(function() {
 				},
 				success: function(data){
 					console.log(data);
-					console.log("Gracias por registrarte, ya puedes ingresar a Ballantine's Records");
+					console.log("Gracias por registrarte");
 					
 				},
 				failure: function(errMsg) {
