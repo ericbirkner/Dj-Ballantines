@@ -67,7 +67,7 @@ $(document).ready(function() {
 			//var birthday 	= $( "#birthday" ).val();
 			var birthday 	= $("#ano").val()+'-'+$("#mes").val()+'-'+$("#dia").val();	
 			var acepta_politica 		= $( "#acepta_politica" ).val();
-			
+			/*
 			var obj = {
 				firstName 		: firstName,
 				lastName 		: lastName,
@@ -88,6 +88,36 @@ $(document).ready(function() {
 				identifyNumber 	: rut,
 				hash : "mnsdjidshjdsj"
 			};
+			*/
+			var obj =
+			{
+			 "firstName": firstName,
+			 "lastName": lastName,
+			 "email": email,
+			 "birthday": birthday,
+			 "languageCode": "es",
+			 "countryCode": "CL",
+			 "address": {
+			 "postCode": "7560910",
+			 "line1" : "Av. Apoquindo 5400",
+			 "city" : "Las Condes",
+			 "state" : "Santiago"			 		 
+			 },
+			 "technicalFields": {
+			 "optIns": [{
+			 "brandId": "Ballantines",
+			 "optInStatus": true
+			 }],
+			 "localAttributes": [{
+				 "type": "Privacy Policy",
+				 "value": "true",
+				 "brandHierarchy": "NA",
+				 "marketHierarchy": "CHILE",
+				 identifyNumber : rut	
+			 }
+			 ]
+			 }
+			}
 
 			var str = JSON.stringify(obj);
 			str = JSON.stringify(obj, null, 4);
@@ -96,8 +126,8 @@ $(document).ready(function() {
 			console.log(obj);
 			$.ajax({
 				type: "POST",
-				url: "https://api.pernod-ricard.io/pr-latam/v1/consumers/",
-				//url : 'http://horus.dev.konabackend.com/',
+				//url: "https://api.pernod-ricard.io/pr-latam/v1/consumers/",
+				url : 'https://api.pernod-ricard.io/pr-latam/v1/interactions/simple/564031cbd4c6f405581cbd26',
 				data: JSON.stringify(obj),
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
@@ -106,7 +136,7 @@ $(document).ready(function() {
 					'api_key': 'q9qsv2ebnkrxky46p8wck33f'
 				},
 				success: function(data){
-					//alert('Success');
+					console.log(data);
 					console.log("Gracias por registrarte, ya puedes ingresar a Ballantine's Records");
 					
 				},
@@ -140,6 +170,7 @@ $(document).ready(function() {
 			
 			
 			//ajax simple ql
+			
 			$.ajax({
 			  method: "GET",
 			  url: "http://simple2.cl/simple/save.php",
@@ -150,7 +181,7 @@ $(document).ready(function() {
 				$('#formulario').removeClass('fadeIn').addClass('fadeOut').css('display','none');
 				$('#lista').addClass('fadeIn animated').css('display','block');
 			});
-
+			
 			
 
 		}else{
