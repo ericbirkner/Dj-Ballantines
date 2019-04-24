@@ -22,13 +22,13 @@ $(document).ready(function() {
 	  console.log(data);
 	  var html = "";
 	  $.each( data, function( key, val ) {		
-		 html+="<li id='" + val.id + "'>" + val.titulo + "</li>";
+		 html+="<li id='" + val.id + "'>" + val.artista +" - "+ val.titulo + "</li>";
 	  });
 	  
 	  $('.listado ul').html(html);
 		
 	  $('#lista ul li').on('click', function(event){
-		var ok = confirm('¿'+$(this).text().toUpperCase()+'?');
+		var ok = confirm('¿Deseas votar por:\n'+$(this).text().toUpperCase()+'?');
 		var id = $(this).attr('id');
 		if (ok == true) {
 		  $.ajax({

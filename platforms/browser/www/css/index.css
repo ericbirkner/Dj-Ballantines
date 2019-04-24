@@ -392,11 +392,13 @@ a.time{
 	font-weight: 700;
 	text-transform: uppercase;
 	white-space: normal;
+	text-shadow: 1px 1px 1px rgba(0,25,58,0.8);
 }
 
 #lista .listado ul li:hover{
 	background: #ccc;
 	color: #001a3b;
+	text-shadow: 1px 1px 1px #ccc;
 }
 
 #final{
