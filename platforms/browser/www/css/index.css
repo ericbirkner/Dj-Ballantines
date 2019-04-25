@@ -363,8 +363,8 @@ a.time{
 }
 
 #lista .listado{
-	height: 380px;
-	width: 400px;
+	height: 480px;
+	width: 500px;
 	margin: 0 auto;
 	border-radius: 15px;
 	overflow-y: scroll;

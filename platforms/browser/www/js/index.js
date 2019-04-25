@@ -28,21 +28,22 @@ $(document).ready(function() {
 	  $('.listado ul').html(html);
 		
 	  $('#lista ul li').on('click', function(event){
-		var ok = confirm('¿Deseas votar por:\n'+$(this).text().toUpperCase()+'?');
-		var id = $(this).attr('id');
-		if (ok == true) {
+		  var id = $(this).attr('id');	
+		  var ok = confirm('¿Deseas votar por:\n'+$(this).text().toUpperCase()+'?');
+		
+		  if (ok == true) {
 		  $.ajax({
 			  method: "GET",
 			  url: "http://simple2.cl/simple/save_puntos.php",
 			  data: { id: id, puntos:'true'}
 			})
 			.done(function( msg ) {
-				console.log( "Data Saved: " + msg );
-			  	$('#lista').removeClass('fadeIn').addClass('fadeOut').css('display','none');
-			    $('#final').addClass('fadeIn animated').css('display','block');			  
+				console.log(msg);			  		  
 			});
+			$('#lista').removeClass('fadeIn').addClass('fadeOut').css('display','none');
+			$('#final').addClass('fadeIn animated').css('display','block');		
 		} else {
-		  return false;
+		  console.log(ok);
 		}
 	 });	
 	  
@@ -67,28 +68,7 @@ $(document).ready(function() {
 			//var birthday 	= $( "#birthday" ).val();
 			var birthday 	= $("#ano").val()+'-'+$("#mes").val()+'-'+$("#dia").val();	
 			var acepta_politica 		= $( "#acepta_politica" ).val();
-			/*
-			var obj = {
-				firstName 		: firstName,
-				lastName 		: lastName,
-				email : email,
-				birthday		: birthday,
-				gender : "M",
-				countryCode		: "cl",
-				languageCode : "es",
-				city : "santiago",
-				createdDate: '2019-10-30T08:49:00Z',
-				updatedDate: '2019-10-30T08:49:00Z',
-				activityID: 'ballantines_DJ_2019',
-				activityRecordSource : "DJ",
-				activityType: "event",
-				activityName: "ballantines_DJ_2019",
-				optIn_Chivas: "True",
-				optInDate_Chivas: "2017-10-30T08:49:00Z",
-				identifyNumber 	: rut,
-				hash : "mnsdjidshjdsj"
-			};
-			*/
+			
 			var obj =
 			{
 			 "firstName": firstName,
@@ -155,7 +135,7 @@ $(document).ready(function() {
 				},
 				error: function(errMsg) {
 					if(errMsg.responseText=="{\"message\":\"hash invalid, the minimum length is 6\"}"){
-						mensaje = "La contraseÃ±a debe tener al menos 6 caracteres.";
+						mensaje = "La contraseña debe tener al menos 6 caracteres.";
 					}else if("{\"message\":\"The consumer already exists in Touchpoint\",\"code\":26}"){
 						mensaje = "Este correo ya se encuentra registrado.";
 					}else{
