@@ -29,11 +29,10 @@ body{
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
 	background: #000;
 	color: #fff;
-	overflow: hidden;
 	font-family: 'Open Sans Condensed', sans-serif;
+	overflow: hidden;
 }
 
 strong, h1, h2, h3, h4, h5{
@@ -110,9 +109,8 @@ a.time{
 #intro{
   width: 100%;
   height: 100%;
-  height: 100vh !important;
   position: absolute;
-  background: url(../img/fondo_premio.jpg) no-repeat center center fixed;
+  background: url(../img/fondo_premio.jpg) no-repeat center center #000;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -537,11 +535,11 @@ a.time{
 }
 .dialog-ovelay .dialog {
     width: 400px;
-    margin: 100px auto 0;
+    margin: 250px auto 0;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0,0,0,.2);
     border-radius: 20px;
-    overflow: hidden
+    overflow: hidden;
 }
 .dialog-ovelay .dialog header {
     padding: 10px 8px;
