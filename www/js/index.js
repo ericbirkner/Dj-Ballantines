@@ -28,7 +28,10 @@ $(document).ready(function() {
 	  $('.listado ul').html(html);
 		
 	  $('#lista ul li').on('click', function(event){
-		  var id = $(this).attr('id');	
+		  var id = $(this).attr('id');
+		  var tema = $(this).text().toUpperCase();
+		  Confirm('TU TEMA ES', $(this).text().toUpperCase(), 'Si', 'No', id);
+		  /*
 		  var ok = confirm('¿Deseas votar por:\n'+$(this).text().toUpperCase()+'?');
 		
 		  if (ok == true) {
@@ -44,7 +47,7 @@ $(document).ready(function() {
 			$('#final').addClass('fadeIn animated').css('display','block');		
 		} else {
 		  console.log(ok);
-		}
+		}*/
 	 });	
 	  
 	});
@@ -173,3 +176,43 @@ $(document).ready(function() {
 	
 	
 });
+
+function Confirm(title, msg, $true, $false, id) { 
+        var $content =  "<div class='dialog-ovelay'>" +
+                        "<div class='dialog'><header>" +
+                         " <h3> " + title + " </h3> " +
+                         "<i class='fa fa-close'></i>" +
+                     "</header>" +
+                     "<div class='dialog-msg'>" +
+                         " <p> " + msg + " </p> " +
+                     "</div>" +
+                     "<footer>" +
+                         "<div class='controls'>" +
+                            " <button class='button button-default cancelAction'>" + $false + "</button> " + 
+							" <button class='button button-danger doAction'>" + $true + "</button> " +                             
+                         "</div>" +
+                     "</footer>" +
+                  "</div>" +
+                "</div>";
+         $('body').prepend($content);
+      $('.doAction').click(function () {
+        	$.ajax({
+			  method: "GET",
+			  url: "http://simple2.cl/simple/save_puntos.php",
+			  data: { id: id, puntos:'true'}
+			})
+			.done(function( msg ) {
+				console.log(msg);			  		  
+			});
+			$('#lista').removeClass('fadeIn').addClass('fadeOut').css('display','none');
+			$('#final').addClass('fadeIn animated').css('display','block');	
+        $(this).parents('.dialog-ovelay').fadeOut(500, function () {
+          $(this).remove();
+        });
+      });
+	$('.cancelAction, .fa-close').click(function () {
+		$(this).parents('.dialog-ovelay').fadeOut(500, function () {
+		  $(this).remove();
+		});
+	  });
+}
