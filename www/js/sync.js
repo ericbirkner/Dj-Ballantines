@@ -58,8 +58,8 @@ function lista_datos(tx, results) {
         console.log(obj);
         $.ajax({
             type: "POST",
-            url: "https://api.pernod-ricard.io/pr-latam/v1/consumers/",
-            //url : 'http://horus.dev.konabackend.com/',
+            //url: "https://api.pernod-ricard.io/pr-latam/v1/consumers/",
+            url : 'https://api.pernod-ricard.io/pr-latam/v1/interactions/simple/564031cbd4c6f405581cbd26',
 			data: JSON.stringify(obj),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -69,7 +69,7 @@ function lista_datos(tx, results) {
    			},
             success: function(data){
                 //alert('Success');
-				console.log("Gracias por registrarte, ya puedes ingresar a Ballantine's Records");
+				console.log(data);
 				exito++;
 			},
 			failure: function(errMsg) {
