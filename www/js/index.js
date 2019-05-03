@@ -30,7 +30,7 @@ $(document).ready(function() {
 	  $('#lista ul li').on('click', function(event){
 		  var id = $(this).attr('id');
 		  var tema = $(this).text().toUpperCase();
-		  Confirm('TU TEMA ES', $(this).text().toUpperCase(), 'Si', 'No', id);
+		  Confirm('TU CANCIÓN ES', $(this).text().toUpperCase(), 'OK', 'NO', id);
 		  /*
 		  var ok = confirm('¿Deseas votar por:\n'+$(this).text().toUpperCase()+'?');
 		
@@ -191,6 +191,8 @@ function Confirm(title, msg, $true, $false, id) {
                             " <button class='button button-default cancelAction'>" + $false + "</button> " + 
 							" <button class='button button-danger doAction'>" + $true + "</button> " +                             
                          "</div>" +
+						"<div class='frase' >EN UNOS MINUTOS EL DJ LA TOCARÁ PARA TODOS.</div>"+
+						"<p class='legalcito'>Disfruta con responsabilidad. Producto para mayores de 18 años.</p>"+
                      "</footer>" +
                   "</div>" +
                 "</div>";

@@ -253,17 +253,27 @@ a.time{
 	padding: 10px 5%;
 	position: absolute;
 	right: 0;
-	top: 300px;
+	top: 290px;
+}
+
+.mayores_18{
+	font-size: 19px;
+    clear: both;
+    padding: 20px 0 0 0;
+    text-transform: uppercase;
+	text-shadow: 1px 1px rgba(0,25,58,0.8);
 }
 
 .legal{
 	position: absolute;
 	width: 90%;
-	bottom: 5px;
+	bottom: 10px;
 	left: 5%;
 	z-index: 2;
-	font-size: 13px;
+	font-size: 15px;
 	text-align: justify;
+	text-transform: uppercase;
+	text-shadow: 1px 1px rgba(0,25,58,0.8);
 }
 
 .legal.center{
@@ -362,7 +372,7 @@ a.time{
 }
 
 #lista .listado{
-	height: 480px;
+	height: 430px;
 	width: 500px;
 	margin: 0 auto;
 	border-radius: 15px;
@@ -401,7 +411,7 @@ a.time{
 }
 
 #final{
-	width: 500px;
+	width: 580px;
 	height: 100%;
 	right: 5%;
 	top: 22%;
@@ -540,9 +550,10 @@ a.time{
     box-shadow: 0 0 20px rgba(0,0,0,.2);
     border-radius: 20px;
     overflow: hidden;
+	color: rgb(0,25,58);
 }
 .dialog-ovelay .dialog header {
-    padding: 10px 8px;
+    padding: 10px 8px 0 8px;
 	text-align: center;
 	/*
     background-color: #f6f7f9;
@@ -577,7 +588,10 @@ a.time{
 .dialog-ovelay .dialog .dialog-msg p{
     margin: 0;
 	text-align: center;
-    font-size: 1.5em;
+    font-size: 1.7em;
+	background: #ccc;
+	border-radius: 20px;
+	font-weight: 700;
     color: rgb(0,25,58);
 }
 .dialog-ovelay .dialog footer {
@@ -608,4 +622,25 @@ a.time{
 .link {
   padding: 5px 10px;
   cursor: pointer
+}
+.dialog-ovelay .frase{
+	text-align: center;
+    padding: 10px 0;
+    font-size: 1.1em;
+}
+
+.dialog-ovelay .frase{
+	text-align: center;
+    padding: 10px 0;
+    font-size: 1.1em;
+	font-weight: 700;
+}
+
+.dialog-ovelay .legalcito{
+	padding: 0 0 10px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
 }
