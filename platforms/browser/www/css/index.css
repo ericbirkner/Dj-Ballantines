@@ -172,6 +172,7 @@ a.time{
 	right: 5%;
 	top: 100px;
 	position: absolute;
+	z-index: 4;
 }
 
 #formulario .campos h1{
@@ -284,6 +285,12 @@ a.time{
 
 .legal a{
   color: white;
+}
+
+@media (max-height: 550px) {
+  .legal {
+    display: none;
+  }
 }
 
 /* Create a custom checkbox */
