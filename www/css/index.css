@@ -110,7 +110,7 @@ a.time{
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url(../img/fondo_premio.jpg) no-repeat center center #000;
+  background: url(../img/fondo_premio.jpg) no-repeat left center #000;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
